@@ -1,8 +1,8 @@
-# build_fast_ai_intern
+# Build_fast_ai_intern
 # 🧠 Contextual Medical Q&A Chatbot with RAG Pipeline
 
 > **External Sources Used**:  
-> ChatGPT (OpenAI) for guidance and code structuring,  
+> ChatGPT (OpenAI) for design guidance and structuring,  
 > [LangChain Documentation](https://docs.langchain.com),  
 > [Gemini API Documentation](https://ai.google.dev)
 
@@ -11,7 +11,7 @@ This project demonstrates a **domain-specific retrieval-augmented generation (RA
 ## 🚀 Project Overview
 
 - Collected a medical corpus (700+ pages), cleaned and chunked into **10,000+ indexed segments**
-- Created a **semantic search engine** using `FAISS` for fast, dense vector retrieval
+- Created a **semantic search engine** using FAISS for fast, dense vector retrieval
 - Built a custom RAG pipeline using:
   - Gemini LLM for generation
   - LangChain for orchestration
@@ -34,19 +34,22 @@ Users can ask natural language medical questions like:
 
 And receive structured answers based on real corpus content — including citations and chunk references.
 
+## 📁 Key Files & Structure
+
+- `data_load_and_upload.py` – Loads and prepares medical documents; chunking & vector indexing using FAISS.
+- `medi_qabot.py` – Main app logic for the medical Q&A bot; ties retrieval and generation.
+- `memory_connect_with_llm.py` – Handles LLM memory/context handling with Gemini API and LangChain.
+- `requirements.txt` – Python dependencies for full environment setup.
+- `ASKED QUES AND GENERATED ANS.pdf` – Sample outputs demonstrating system performance.
+- `vectorstore/db_faiss/` – Stored FAISS index for semantic retrieval.
+- `data/` – Raw or preprocessed medical documents.
+
 ## 🏆 Highlights
 
 - Efficient handling of **domain-specific**, multi-page unstructured data
 - Fully local FAISS-based retrieval — no external dependency
 - RAG architecture demonstrates **low-latency, context-aware response generation**
 - Ideal for use cases in **healthcare, education, and sales assistant AI**
-
-## 📁 Files
-
-- `app.py`: Streamlit UI for question-answering
-- `rag_pipeline.py`: FAISS setup + LLM response logic
-- `chunk_utils.py`: Document processing into retrievable units
-- `data/`: Includes test corpus
 
 ## 🧪 Sample Questions
 
@@ -57,4 +60,3 @@ And receive structured answers based on real corpus content — including citati
 ---
 
 📌 Built to simulate real-world RAG use cases in medical QA, this project mirrors the architecture behind scalable, multilingual GenAI copilots like Darwix’s assist engine.
-
